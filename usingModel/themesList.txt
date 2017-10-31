@@ -1,0 +1,5 @@
+tv,radio,online,magazine,newspaper,podcast,
+brand,product,business,website,channel,network,competition,games,company,university,school,bank,bar,hotel,theatre,store,supermarket,library, 
+fashion,politics,music,news,business,sport,comedy,entertainment,food,travel,luxury,technology,car,software,phone,clothing,album,book,medicine,computer,electronics,health,
+artist,actor,entrepreneur,athlete,comedian,musician,politician,businessman,writer,band,lawyer,investor,designer,director,producer,author,engineer,scientist,inventor,host,magnate,doctor,pet,chef,coach,blogger,dancer,journalist,teacher,
+

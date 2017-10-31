@@ -1,0 +1,34 @@
+# =============================================================================== #			
+			Script to operate the Wikipedia Model
+# =============================================================================== #
+
+Main goal of this script is to cycle through a list of twitter users with their 
+corresponding name and description and determine their main interests. 
+The interests (or themes) are defined in a seperate text file and the similarity of each word
+in the user's name and description for every theme is determined.
+
+Main Inputs:
+1) A trained Word2Vec model
+2) A trained phrase colocation model (trained to find bigrams)
+3) A .txt file that has a list of all the themes that need to be investigated
+4) A folder with CSVs, where each CSV represents a tribe that has a list of users, screennames and their 
+descriptions. 
+
+Outputs:
+1) Folder for each tribe that contains affinity of user's name and description for every theme. 
+2) 2 correpsonding CSVs for each tribe that contain information
+
+ - Classification of each user as an individual/corporate/unknown
+ - Breakdown of users into clusters for each tribe (cluster represents groups of users that have 
+	similarities between each other for certain themes).
+
+Algorithm:
+
+* runAll.sh is a script that will launch 2 main python files;
+
+* Python Script 1) Going through each user in a tribe and assigning a 
+similarity score that their name and description have with a select number of themes
+
+* Python Script 2) Combine these scores for each user, 
+determine whether they are an individual, corporation or unknown
+and assign them to clusters that have overlapping interests. 
