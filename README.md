@@ -1,4 +1,4 @@
-# wikiTrainPy
+# wikiTrainPy: Training Word2Vec model on wikipedia data
  A python library to train and store a word2vec model trained on wiki data. Model includes most common bigrams.
 
 ## Getting Started
@@ -40,5 +40,21 @@ python trainWikiText.py $wikiTextDir $bigramDir
 End result is a Word2Vec model, saved in a vector format to be loaded and used in another instance. 
 
 ### Using model
+
+Here we use the model to determine the similarity of a sentence to a particular theme using the Word2Vec model.
+
+This is done by using the runAll.py file in the usingModel folder. 
+The inputs are the wiki file, the bigram model, a text file of themes to examine and a folder that contains csvs of data.
+
+```
+# INPUTS
+modelFile='[/path/to/wikiModel].vector'
+bigramFile='[/path/to/bigramModel].model'
+themesFile='[/path/to/list/of/themes/].txt'
+folderName='[folder_containts_csv_data]'
+
+# COMMAND
+python findTextSim.py $modelFile $bigramFile $themesFile $folderName
+```
 
 
