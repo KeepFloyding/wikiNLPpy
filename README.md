@@ -46,6 +46,14 @@ Here we use the model to determine the similarity of a sentence to a particular 
 This is done by using the runAll.py file in the usingModel folder. 
 The inputs are the wiki file, the bigram model, a text file of themes to examine and a folder that contains csvs of data.
 
+Main Inputs:
+1) A trained Word2Vec model
+2) A trained phrase colocation model (trained to find bigrams)
+3) A .txt file that has a list of all the themes that need to be investigated
+4) A folder with CSVs, where each CSV represents a key and a sample of text to analyse
+
+The interests (or themes) are defined in a seperate text file and the similarity of each word in the second column of the csv is used.
+
 ```
 # INPUTS
 modelFile='[/path/to/wikiModel].vector'
@@ -56,5 +64,7 @@ folderName='[folder_containts_csv_data]'
 # COMMAND
 python findTextSim.py $modelFile $bigramFile $themesFile $folderName
 ```
+
+Outputs is a folder for each csv that contains affinity of sample text for every theme. 
 
 
