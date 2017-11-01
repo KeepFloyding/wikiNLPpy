@@ -83,26 +83,19 @@ if __name__ == '__main__':
 		# Cleaning and Processing Text
 		logger.info('Cleaning data...')
 		userName = [];
-		name = [];
 		descriptions = [];
 
 		for term in data:
 			if len(term) > 2:
 				userName.append(term[0]);
-				name.append(term[1]);
-				descriptions.append(" ".join(term[2:len(term)]));
-
-		# Getting rid of apostrophes in text
-		newName = [term.replace("'"," ") for term in name]
+				descriptions.append(" ".join(term[1:len(term)]));
 
 		# Cleaning text
-		clnName = cleanText(newName,'en')
 		clnDescr = cleanText(descriptions,'en');
 
 		# Checking for Bigrams 
 		logger.info('Checking for bigrams...')
 		biDescr = bigram[clnDescr];
-		biName = bigram[clnName]
 
 		# -----------------------------------------------------------------------------------------
 		# FINDING SIMILARITY
@@ -110,7 +103,6 @@ if __name__ == '__main__':
 
 		# Finding similarity score for each user for each category
 		logger.info('Finding similarity score for each category...')
-		labels = labelText(biName,model,themes);
 		descLabels = labelText(biDescr,model,themes)
  
 		# -----------------------------------------------------------------------------------------
@@ -119,12 +111,6 @@ if __name__ == '__main__':
 
 		logger.info('Saving data to csv and numpy dictionaries...')
 
-		# Saving to CSV files
-
-		save(folderName + '/' + 'tribeScoreSummary.csv',[],name,descriptions,userName,labels,descLabels)
-
 		# Saving dictionaries in np format
-
-		np.save(folderName + '/' + 'labels.npy',labels)
 		np.save(folderName + '/' + 'descLabels.npy',descLabels)
 
