@@ -1,4 +1,4 @@
-# wikiTrainPy: Training Word2Vec model on wikipedia data
+# wikiNLPpy: Training Word2Vec model on wikipedia data
  A python library to train and store a word2vec model trained on wiki data. Model includes most common bigrams.
 
 ## Getting Started
